@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            background-color: #131313;
+            justify-content: center;
+            align-items: center;
+        }
+        .calculator-container {
+            width: 45vw;
+            height: fit-content;
+            background-color: #ffffff;
+            padding: 20px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 10px 10px 5px 0px #9c9c9ce6;
+        }
+        .calculator-container .display {
+            width: 100%;
+            padding: 15px;
+            text-align: right;
+            font-size: 1.5rem;
+            border:none;
+            border-radius: 15px;
+            background-color: #b6b6b6;
+            margin-bottom: 10px;
+        }
+        .calculator-container .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+        .calc_button {
+            transition: all 150ms ease-in;
+            padding: 10px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            background-color: #dddddd;
+        }
+        .calc_button:hover {
+            background-color: #adadad;
+        }
+        .calc_button.operator {
+            background-color: #ff2c2c;
+            color: white;
+        
+        }
+        .calc_button.operator:hover {
+            background-color: #b63131;
+        }
+        .calc_button.equals {
+            grid-column: 4;
+            grid-row: 4 / span 2;
+            background-color: #69ff69;
+            font-size: 3rem;
+        }
+        .calc_button.equals:hover {
+            background-color: #2ab12a;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <input type="text" class="display" id="total_value" value="" readonly disabled>
+        <div class="buttons">
+            <button class="calc_button operator" data-value="clear">AC</button>
+            <button class="calc_button operator" data-value="/">/</button>
+            <button class="calc_button operator" data-value="*">x</button>
+            <button class="calc_button operator" data-value="back"><-</button>
+
+            <button class="calc_button" data-value="9">9</button>
+            <button class="calc_button" data-value="8">8</button>
+            <button class="calc_button" data-value="7">7</button>
+            <button class="calc_button operator" data-value="-">-</button>
+
+            <button class="calc_button" data-value="6">6</button>
+            <button class="calc_button" data-value="5">5</button>
+            <button class="calc_button" data-value="4">4</button>
+            <button class="calc_button operator" data-value="+">+</button>
+
+            <button class="calc_button" data-value="3">3</button>
+            <button class="calc_button" data-value="2">2</button>
+            <button class="calc_button" data-value="1">1</button>
+            <button class="calc_button equals" data-value="=">=</button>
+
+            <button class="calc_button" data-value="%">%</button>
+            <button class="calc_button" data-value="0">0</button>
+            <button class="calc_button" data-value=".">.</button>
+        </div>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>
